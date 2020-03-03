@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Hello from '@/components/Hello'
 import Search from '@/components/tabbar/Search'
 import Member from '@/components/tabbar/Member'
 import ShopCart from '@/components/tabbar/ShopCart'
 import Home from '@/components/tabbar/Home'
+import NewsList from '@/components/news/NewsList'
+import NewsInfo from '@/components/news/NewsInfo'
 
 Vue.use(Router)
 
@@ -14,7 +15,9 @@ export default new Router({
     { path: '/home', component: Home },
     { path: '/search', component: Search },
     { path: '/member', component: Member },
-    { path: '/shopcart', component: ShopCart }
+    { path: '/shopcart', component: ShopCart },
+    { path: '/home/newslist', component: NewsList },
+    { path: '/home/newsinfo/:id', component: NewsInfo }
   ],
-  linkActiveClass: 'mui-active'
+  linkActiveClass: 'mui-active' // router——link 颜色提示
 })

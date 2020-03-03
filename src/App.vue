@@ -2,13 +2,11 @@
   <div class="app-container">
     <!-- header -->
     <mt-header fixed title="京海商城"></mt-header>
-
-    <!-- router 路由 -->
+        <!-- router 路由 -->
     <transition>
       <router-view></router-view>
     </transition>
-
-        <nav class="mui-bar mui-bar-tab">
+    <nav class="mui-bar mui-bar-tab">
         <router-link class="mui-tab-item mui-active" to="/home">
           <span class="mui-icon mui-icon-home"></span>
           <span class="mui-tab-label">首页</span>
@@ -27,7 +25,6 @@
         </router-link>
     </nav>
     <!-- 内容 -->
-
   </div>
 </template>
 <style scoped>

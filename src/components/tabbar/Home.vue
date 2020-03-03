@@ -5,30 +5,42 @@
         </mt-swipe>
     <div class="mui-content">
       <ul class="mui-table-view mui-grid-view mui-grid-9">
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+            <router-link  to="/home/newslist">
                 <span class="mui-icon mui-icon-extra mui-icon-extra-topic"></span>
-                <div class="mui-media-body">Topic</div>
-            </a></li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                <div class="mui-media-body">News</div>
+            </router-link>
+        </li>
+        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+          <router-link to="">
                 <span class="mui-icon mui-icon-extra mui-icon-extra-share"><span class="mui-badge">5</span></span>
                 <div class="mui-media-body">share</div>
-            </a></li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+          </router-link>
+        </li>
+        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+          <router-link to="">
                 <span class="mui-icon mui-icon-chatbubble"></span>
                 <div class="mui-media-body">Chat</div>
-            </a></li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+          </router-link>
+        </li>
+        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+          <router-link to="">
                 <span class="mui-icon mui-icon-paperplane"></span>
                 <div class="mui-media-body">paperplane</div>
-            </a></li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+          </router-link>
+        </li>
+        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+          <router-link to="">
                 <span class="mui-icon mui-icon-videocam"></span>
                 <div class="mui-media-body">video</div>
-            </a></li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+          </router-link>
+        </li>
+        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+          <router-link to="">
                 <span class="mui-icon mui-icon-phone"></span>
                 <div class="mui-media-body">Phone</div>
-            </a></li>
+          </router-link>
+        </li>
       </ul>
     </div>
     </div>

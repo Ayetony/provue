@@ -6,12 +6,14 @@ import ShopCart from '@/components/tabbar/ShopCart'
 import Home from '@/components/tabbar/Home'
 import NewsList from '@/components/news/NewsList'
 import NewsInfo from '@/components/news/NewsInfo'
+import PhotoList from '@/components/photos/PhotoList'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     { path: '/', redirect: '/home' },
+    { path: '/home/photo', component: PhotoList },
     { path: '/home', component: Home },
     { path: '/search', component: Search },
     { path: '/member', component: Member },

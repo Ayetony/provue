@@ -8,9 +8,10 @@ import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import VuePreview from 'vue-preview'
 
 Vue.config.productionTip = false
-
+Vue.use(VuePreview)
 Vue.use(MintUI)
 Vue.filter('dataFormat', function (dataStr, pattern = 'YYYY-MM-DD HH:mm:ss') {
   return moment(dataStr).format(pattern)

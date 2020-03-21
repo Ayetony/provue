@@ -7,6 +7,8 @@ import Home from '@/components/tabbar/Home'
 import NewsList from '@/components/news/NewsList'
 import NewsInfo from '@/components/news/NewsInfo'
 import PhotoList from '@/components/photos/PhotoList'
+import PhotoInfo from '@/components/photos/PhotoInfo'
+import GoodsList from '@/components/goods/GoodsList'
 
 Vue.use(Router)
 
@@ -19,7 +21,9 @@ export default new Router({
     { path: '/member', component: Member },
     { path: '/shopcart', component: ShopCart },
     { path: '/home/newslist', component: NewsList },
-    { path: '/home/newsinfo/:id', component: NewsInfo }
+    { path: '/home/newsinfo/:id', component: NewsInfo },
+    { path: '/home/photoinfo/:id', component: PhotoInfo },
+    { path: '/home/goodslist', component: GoodsList }
   ],
   linkActiveClass: 'mui-active' // router——link 颜色提示
 })

@@ -11,18 +11,18 @@
             :class="['mui-control-item',item.id == 0 ? 'mui-active':'']"
             href="#item1mobile"
             v-for="item in categories"
-            :key="item.id"
+            :key="item.id" @click="getImgsList(item.id)"
           >{{ item.title }}</a>
         </div>
       </div>
     </div>
     <ul class="photoList">
-      <li v-for="(item,index) in list" :key="index">
+      <router-link v-for="(item,index) in list" :key="index" :to="'/home/photoinfo/' + item.id" >
         <img v-lazy="item.img_url"/>
         <div class="info">
           <p>{{ item.title }}</p>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -62,13 +62,18 @@ export default {
           console.error(err)
         })
     },
-    getImgsList () {
+    getImgsList (id) {
       axios
         .get(
           'http://localhost:7300/mock/5e4aa708648f3123f8e6be7e/test/getImgsList'
         )
         .then(res => {
           this.list = res.data.data.imgsList
+          this.list.map(function (item) {
+            if (item.id === id) {
+              this.list.shift()
+            }
+          })
           console.log(res)
         })
         .catch(err => {

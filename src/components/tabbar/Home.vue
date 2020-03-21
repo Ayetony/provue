@@ -8,37 +8,37 @@
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
             <router-link  to="/home/newslist">
                 <span class="mui-icon mui-icon-extra mui-icon-extra-topic"></span>
-                <div class="mui-media-body">News</div>
+                <div class="mui-media-body">新闻</div>
             </router-link>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <router-link to="/home/photo">
                 <span class="mui-icon mui-icon-extra mui-icon-extra-share"><span class="mui-badge">5</span></span>
-                <div class="mui-media-body">share</div>
+                <div class="mui-media-body">图片</div>
           </router-link>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-          <router-link to="">
-                <span class="mui-icon mui-icon-chatbubble"></span>
-                <div class="mui-media-body">Chat</div>
+          <router-link to="/home/goodslist">
+                <span class="mui-icon mui-icon-spinner mui-spin"></span>
+                <div class="mui-media-body">商品</div>
           </router-link>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <router-link to="">
                 <span class="mui-icon mui-icon-paperplane"></span>
-                <div class="mui-media-body">paperplane</div>
+                <div class="mui-media-body">留言</div>
           </router-link>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <router-link to="">
                 <span class="mui-icon mui-icon-videocam"></span>
-                <div class="mui-media-body">video</div>
+                <div class="mui-media-body">视频</div>
           </router-link>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <router-link to="">
                 <span class="mui-icon mui-icon-phone"></span>
-                <div class="mui-media-body">Phone</div>
+                <div class="mui-media-body">电话</div>
           </router-link>
         </li>
       </ul>

@@ -1,6 +1,20 @@
 <template>
     <div class="goodslist">
-        <div class="goodsitem">
+        <router-link class="goodsitem" to="/home/goodsinfo/9" tag="div">
+           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/53641901fbc28cbcdb495b17fdf69e46.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt=""/>
+           <h1 class="title"> 小米手机 </h1>
+           <div class="info">
+              <p class="price">
+                  <span class="now">￥999</span>
+                  <span class="old">￥1980</span>
+              </p>
+              <p class="sell">
+                  <span>热卖中</span>
+                  <span>剩下60件</span>
+              </p>
+           </div>
+        </router-link>
+        <div class="goodsitem"  @click="goDetailPage(9)">
            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/53641901fbc28cbcdb495b17fdf69e46.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt=""/>
            <h1 class="title"> 小米手机 </h1>
            <div class="info">
@@ -14,21 +28,7 @@
               </p>
            </div>
         </div>
-        <div class="goodsitem">
-           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/53641901fbc28cbcdb495b17fdf69e46.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt=""/>
-           <h1 class="title"> 小米手机 </h1>
-           <div class="info">
-              <p class="price">
-                  <span class="now">￥999</span>
-                  <span class="old">￥1980</span>
-              </p>
-              <p class="sell">
-                  <span>热卖中</span>
-                  <span>剩下60件</span>
-              </p>
-           </div>
-        </div>
-        <div class="goodsitem">
+        <div class="goodsitem"  @click="goDetailPage(9)">
            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/53641901fbc28cbcdb495b17fdf69e46.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt=""/>
            <h1 class="title"> 小米手机 </h1>
            <div class="info">
@@ -55,6 +55,10 @@ export default {
   methods: {
     getGoodsList () {
     //   API getGoodsList
+    },
+    // js 路由
+    goDetailPage (id) {
+      this.$router.push('/home/goodsinfo/9')
     }
   }
 }

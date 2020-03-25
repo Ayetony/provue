@@ -58,7 +58,7 @@ export default {
     },
     // js 路由
     goDetailPage (id) {
-      this.$router.push('/home/goodsinfo/9')
+      this.$router.push({ path: '/home/goodsinfo/' + id, params: {id: id} })
     }
   }
 }

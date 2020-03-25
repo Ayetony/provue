@@ -8,10 +8,14 @@
   </div>
 </template>
 <script>
+import mui from '../../lib/mui/js/mui.min.js'
 export default {
+  mounted () {
+    mui('.mui-numbox').numbox()
+  },
   methods: {
     countChanged () {
-      console.log(this.$refs.numberbox.value)
+      // console.log(this.$refs.numberbox.value)
       this.$emit('getcount', parseInt(this.$refs.numberbox.value))
       // 子组件传递给父组件，通过ref引用获取数值，然后通过emit事件发射给父组件与子组件绑定的事件名称
     }

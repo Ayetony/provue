@@ -29,7 +29,7 @@
           <p>购买数量 <numberbox @getcount="getSelectedCount" :max="max"></numberbox></p>
           <p class="action">
             <mt-button type="primary" size="small">立即购买</mt-button>
-            <mt-button type="danger" size="small">加入购物车</mt-button>
+            <mt-button type="danger" size="small" @click="ballShow">加入购物车</mt-button>
           </p>
         </div>
       </div>
@@ -58,15 +58,17 @@ import mui from '../../lib/mui/js/mui.min.js'
 export default {
   data () {
     return {
-      id: this.$route.id,
+      id: this.$route.params.id,
       imgs: [],
       max: 100,
-      goodsinfo: {},
+      goodsinfo: { 'sell_price': 2199, 'name': 'xiaomi' },
+      img_src: 'https://img10.360buyimg.com/n5/jfs/t1/96745/12/12241/90115/5e440170Ed390346c/fdd0c25e7cfcbf31.jpg',
       ballFlag: false,
       selectedCount: 1
     }
   },
   created () {
+    console.log('product_id', this.$route.params.id)
     this.getImg()
   },
   components: {
@@ -94,6 +96,17 @@ export default {
     },
     ballShow () {
       this.ballFlag = !this.ballFlag
+      var addgoods = {
+        id: this.id,
+        count: this.selectedCount,
+        sell_price: this.goodsinfo.sell_price,
+        img_src: this.img_src,
+        selected: true
+      }
+      // 调用 mutations 中的方法保存购物车的商品信息
+      this.$store.commit('addToShopCart', addgoods)
+      addgoods.id = 22
+      this.$store.commit('addToShopCart', addgoods)
     },
     beforeEnter (el) {
       el.style.transform = 'translate(0, 0)'
@@ -104,24 +117,24 @@ export default {
       const ballPosition = this.$refs.ball.getBoundingClientRect()
       const badgePostion = document.getElementById('badge').getBoundingClientRect()
       let xoffset = badgePostion.left - ballPosition.left
-      const yoffset = badgePostion.top - ballPosition.top
+      let yoffset = badgePostion.top - ballPosition.top
       el.style.transform = 'translate(' + xoffset + 'px,' + yoffset + 'px)'
       el.style.transition = 'all 1s cubic-bezier(.64, .30, .94, .76)'
       done()
     },
-    afterEnter () {
+    afterEnter (el) {
       this.ballFlag = !this.ballFlag
     },
     getSelectedCount (count) {
       this.selectedCount = count
       console.log('父组件', count)
-    },
-    watch: {
-      max: function (newVal, oldVal) {
-        mui('.nui-numbox').numbox().setOption('step', newVal)
-      }
     }
-
+  },
+  watch: {
+    max: function (newVal, oldVal) {
+      mui('.nui-numbox').numbox().setOption('step', newVal)
+    },
+    immediate: true
   }
 }
 </script>
@@ -153,7 +166,7 @@ export default {
   background-color: red;
   position: absolute;
   z-index: 99;
-  top:390px;
-  left: 137px;
+  top: 411px;
+  left: 77px;
 }
 </style>
